@@ -31,7 +31,7 @@ body{
     margin-top: 20vh;
 }
 
-#headingText{
+.headingText{
     font-size: 1.5rem;
 
 }
@@ -137,4 +137,9 @@ input{
     width: 275px;
     margin-right: 25px;
     height: 200px;
+}
+
+#participants{
+    font-size: 1.5rem;
+    padding-left:20px;
 }

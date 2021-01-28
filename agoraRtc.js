@@ -1,22 +1,70 @@
 let handlefail = function(err){
     console.log(err)
 }
+let numPeople = 0;
+let participants = []
 
-
-function addVideoStream(streamId){
+function addVideoStream1(streamId, username){
     console.log()
-    let remoteContainer = document.getElementById("remoteStream");
+    let remoteContainer = document.getElementById("remoteStream1");
+    let name = document.getElementById("participants");
     let streamDiv = document.createElement("div");
     streamDiv.id = streamId;
     // streamDiv.style.transform = "rotateY(180deg)";
-    streamDiv.style.height = "250px"
+    console.log(username);
+    name.value=username;
+    streamDiv.style.height = "200px"
     remoteContainer.appendChild(streamDiv)
+    numPeople++;
+} 
+
+function addVideoStream2(streamId, username){
+    console.log()
+    let remoteContainer = document.getElementById("remoteStream2");
+    let name = document.getElementById("participants");
+    let streamDiv = document.createElement("div");
+    streamDiv.id = streamId;
+    // streamDiv.style.transform = "rotateY(180deg)";
+    console.log(username);
+    name.value=username;
+    streamDiv.style.height = "200px"
+    remoteContainer.appendChild(streamDiv)
+    numPeople++;
+} 
+
+function addVideoStream3(streamId, username){
+    console.log()
+    let remoteContainer = document.getElementById("remoteStream3");
+    let name = document.getElementById("participants");
+    let streamDiv = document.createElement("div");
+    streamDiv.id = streamId;
+    // streamDiv.style.transform = "rotateY(180deg)";
+    console.log(username);
+    name.value=username;
+    streamDiv.style.height = "200px"
+    remoteContainer.appendChild(streamDiv)
+    numPeople++;
 } 
 
 document.getElementById("join").onclick = function () {
     let channelName = document.getElementById("channelName").value;
     let Username = document.getElementById("username").value;
+    let people = document.getElementById("participants")
+    participants.push(Username)
+    console.log(participants);
+    plist = ""
+    // for (person in participants) {
+    //     console.log("printing person")
+    //     console.log(person);
+    //     plist += person + "\n"
+    // }
+    console.log("participants:")
+    participants.forEach(element => console.log(element));
+    participants.forEach(element => plist += element + "\n");
+   
+    people.textContext = plist;
     let appId = "53ca517bfccd44f388878863903c1dc8";
+    
 
     let client = AgoraRTC.createClient({
         mode: "live",
@@ -52,8 +100,19 @@ document.getElementById("join").onclick = function () {
     client.on("stream-subscribed", function(evt){
         console.log("Subscribed Stream");
         let stream = evt.stream;
-        addVideoStream(stream.getId());  
-        stream.play(stream.getId());
+        if (numPeople==0) {
+            addVideoStream1(stream.getId(), Username);  
+            stream.play(stream.getId());
+        } else if (numPeople==1){
+            addVideoStream2(stream.getId(), Username); 
+            stream.play(stream.getId());
+        }else if (numPeople==2){
+            addVideoStream3(stream.getId(), Username); 
+            stream.play(stream.getId());
+        }else{
+            console.log("no more room to add people")
+        }
+        
     })
 
 }
