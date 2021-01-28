@@ -121,15 +121,20 @@ input{
     margin-top: 150px;
     justify-self: center;
     border: 2px solid #099dfd;
-    width: 800px;
+    width: 900px;
     height: 500px;
 }
+.streams{
+    display: flex;
+    flex-direction: row;
+}
 
-#remoteStream{
+.remoteStream{
     text-align: left;
     margin-top: 20px;
     justify-self: center;
     border: 2px solid #099dfd;
-    width: 400px;
-    height: 250px;
+    width: 275px;
+    margin-right: 25px;
+    height: 200px;
 }
