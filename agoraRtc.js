@@ -4,12 +4,13 @@ let handlefail = function(err){
 let numPeople = 0;
 let participants = []
 
-function addVideoStream1(streamId, username){
+function addVideoStream1(streamId){
     console.log()
     let remoteContainer = document.getElementById("remoteStream1");
     let name = document.getElementById("participants");
     let streamDiv = document.createElement("div");
     streamDiv.id = streamId;
+    document.getElementById("participants").innerHTML += streamId + "\n";
     // streamDiv.style.transform = "rotateY(180deg)";
     console.log(username);
     name.value=username;
@@ -18,12 +19,13 @@ function addVideoStream1(streamId, username){
     numPeople++;
 } 
 
-function addVideoStream2(streamId, username){
+function addVideoStream2(streamId){
     console.log()
     let remoteContainer = document.getElementById("remoteStream2");
     let name = document.getElementById("participants");
     let streamDiv = document.createElement("div");
     streamDiv.id = streamId;
+    document.getElementById("participants").innerHTML += streamId + "\n" ;
     // streamDiv.style.transform = "rotateY(180deg)";
     console.log(username);
     name.value=username;
@@ -32,12 +34,13 @@ function addVideoStream2(streamId, username){
     numPeople++;
 } 
 
-function addVideoStream3(streamId, username){
+function addVideoStream3(streamId){
     console.log()
     let remoteContainer = document.getElementById("remoteStream3");
     let name = document.getElementById("participants");
     let streamDiv = document.createElement("div");
     streamDiv.id = streamId;
+    document.getElementById("participants").innerHTML += streamId + "\n" ;
     // streamDiv.style.transform = "rotateY(180deg)";
     console.log(username);
     name.value=username;
@@ -49,7 +52,7 @@ function addVideoStream3(streamId, username){
 document.getElementById("join").onclick = function () {
     let channelName = document.getElementById("channelName").value;
     let Username = document.getElementById("username").value;
-    let people = document.getElementById("participants")
+    document.getElementById("participants").innerHTML = Username + "\n";
     participants.push(Username)
     console.log(participants);
     plist = ""
@@ -59,10 +62,10 @@ document.getElementById("join").onclick = function () {
     //     plist += person + "\n"
     // }
     console.log("participants:")
-    participants.forEach(element => console.log(element));
-    participants.forEach(element => plist += element + "\n");
+    // participants.forEach(element => console.log(element));
+    // participants.forEach(element => plist += element + "\n");
    
-    people.textContext = plist;
+    // people.innerHTML = plist;
     let appId = "53ca517bfccd44f388878863903c1dc8";
     
 
@@ -83,7 +86,6 @@ document.getElementById("join").onclick = function () {
                 video: true,
                 audio: true,
             })
-
             localStream.init(function(){
                 localStream.play("SelfStream")
                 console.log(`App id: ${appId}\nChannel id: ${channelName}`)
@@ -100,14 +102,16 @@ document.getElementById("join").onclick = function () {
     client.on("stream-subscribed", function(evt){
         console.log("Subscribed Stream");
         let stream = evt.stream;
+        let plist = ""
         if (numPeople==0) {
-            addVideoStream1(stream.getId(), Username);  
+            addVideoStream1(stream.getId()); 
+
             stream.play(stream.getId());
         } else if (numPeople==1){
-            addVideoStream2(stream.getId(), Username); 
+            addVideoStream2(stream.getId()); 
             stream.play(stream.getId());
         }else if (numPeople==2){
-            addVideoStream3(stream.getId(), Username); 
+            addVideoStream3(stream.getId()); 
             stream.play(stream.getId());
         }else{
             console.log("no more room to add people")
