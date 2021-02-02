@@ -1,145 +1,176 @@
 body{
-    margin: 0;
-    padding: 0;
-    font-family: 'Montserrat', sans-serif;
+  margin: 0;
+  padding: 0;
+  font-family: 'Puritan', sans-serif;
+  background-color: #023048;
 }
 
 #container{
-    background-color: #099dfd;
+  background-color: #ffe7b7;
 }
 .left-pane{
-    background-color: white;
-    width: 20vw;
-    height: 100vh;
-    padding-left: 20px;
-    padding-right: 20px;
-    box-shadow: 0px 4px 52px rgba(0, 0, 0, 0.13);
+  background-color: #EAE3B7;
+  width: 20vw;
+  height: 100vh;
+  padding-left: 20px;
+  padding-right: 20px;
+  box-shadow: 0px 4px 52px rgba(0, 0, 0, 0.13);
 }
 
 .logo{
-    width: 60%;
-    padding-top: 30px;
-    margin: 0 auto;
+  width: 60%;
+  padding-top: 30px;
+  margin: 0 auto;
 }
 
 #img-container{
-    max-width: 100%;
-    max-height: 100%;
+  max-width: 100%;
+  max-height: 100%;
 }
 
 .loginContainer{
-    margin-top: 20vh;
+  margin-top: 20vh;
 }
 
 .headingText{
-    font-size: 1.5rem;
-
+  font-size: 1.5rem;
+  font-family: 'Puritan', sans-serif;
 }
 #highlighted{
-    color: #099dfd;
+  color: #FBBF49;
 }
 
 #email{
-    margin-top: 20px;
+  margin-top: 20px;
 }
 
 input{
-    margin-top: 10px;
-    padding: 5px;
-    width: 90%;
-    font-size: 1.25rem;
-    border: 2px solid #099dfd;
-    border-radius: 5px;
+  margin-top: 10px;
+  padding: 5px;
+  width: 90%;
+  font-size: 1.25rem;
+  border: 2px solid#023048;
+  border-radius: 5px;
 }
 .submitButton{
-    background-color: #099dfd;
-    margin-top: 10px;
-    padding-top: 5px;
-    padding-bottom: 5px;
-    padding-right: 15px;
-    padding-left: 15px;
-    color: white;
-    border: none;
-    font-size: 1.25rem;
-    border-radius: 10px;
+  background-color:#023048;
+  margin-top: 10px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  padding-right: 15px;
+  padding-left: 15px;
+  color: white;
+  border: none;
+  font-size: 1.25rem;
+  border-radius: 10px;
 }
 
 #flexContainer{
-    display: flex;
-    flex-direction: row;
+  display: flex;
+  flex-direction: row;
 }
 
-#right-pane{
-    flex: 1;
-    text-align: center;
+.right-pane{
+  flex: 2;
+  text-align: center;
 }
 
-#circleContainer{
-    display: flex;
-    margin: 0 auto;
-    margin-top: 60px;
-    width: 650px;
-    height: 650px;
-    border-radius: 1000px;
-    background-color: #ffffff4b;
-    justify-items: center;
-    margin-bottom: 100px;
-}
+/* #circleContainer{
+  display: flex;
+  margin: 0 auto;
+  margin-top: 60px;
+  width: 650px;
+  height: 650px;
+  border-radius: 1000px;
+  background-color: #ffffff4b;
+  justify-items: center;
+  margin-bottom: 100px;
+} */
 
-#illustration{
-    max-width: 100%;
-    max-height: 100%;
+/* #illustration{
+  max-width: 100%;
+  max-height: 100%;
 }
 
 #illustrationContainer{
-    width: 500px;
-    margin: auto;
-    padding-bottom: 45px;
-}
+  width: 500px;
+  margin: auto;
+  padding-bottom: 45px;
+} */
 
 #bottomText{
-    font-size: 1.75rem;
-    color: white;
+  font-size: 1.75rem;
+  color: white;
 }
 
 .flexContainer{
-    display: flex;
-    flex-direction: row;
+  display: flex;
+  flex-direction: row;
 }
 
 
 .right-container{
-    display: flex;
-    width: 100%;
-    height: 100%;
-    flex-direction: column;
-    align-items: center;
+  display: flex;
+  width: 100%;
+  height: 100%;
+  flex-direction: column;
+  align-items: center;
 }
 
 
 #SelfStream{
-    margin-top: 150px;
-    justify-self: center;
-    border: 2px solid #099dfd;
-    width: 900px;
-    height: 500px;
+  margin-top: 75px;
+  justify-self: center;
+  border: 2px solid #FBBF49;
+  width: 750px;
+  height: 400px;
+  text-align:left;
 }
 .streams{
-    display: flex;
-    flex-direction: row;
+  display: flex;
+  flex-direction: row;
 }
 
 .remoteStream{
-    text-align: left;
-    margin-top: 20px;
-    justify-self: center;
-    border: 2px solid #099dfd;
-    width: 275px;
-    margin-right: 25px;
-    height: 200px;
+  text-align: left;
+  margin-top: 20px;
+  justify-self: center;
+  border: 2px solid#FBBF49;
+  width: 225px;
+  margin-right: 25px;
+  height: 150px;
 }
 
 #participants{
-    font-size: 1.5rem;
-    padding-left:20px;
+  font-size: 1.5rem;
+  padding-left:20px;
+}
+
+.controls{
+  justify-self: end;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-evenly;
+  margin-top: 30px;
+  margin-bottom: 0px;
+  height: 100px;
+  width: 600px;
+  background-color: white;
+  border-radius: 30px;
+  margin-left:50px;
+  /* border-top-left-radius: 30px; */
+  box-shadow: 0px 4px 52px rgba(0, 0, 0, 0.13);
+}
+
+
+.icon {
+  height: 40px;
+  width: 50px;
+  margin: 20px;
+  cursor: pointer;
+}
+
+#recipe{
+  font-size:1.5rem;
 }

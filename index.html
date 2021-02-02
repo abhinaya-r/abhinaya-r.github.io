@@ -1,61 +1,63 @@
 <html>
-    <head>
-        <title>Agora Certificate Day-1</title>
-        <link rel="stylesheet" href="styles.css"/>
-        <link rel="preconnect" href="https://fonts.gstatic.com">
-        <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
-    </head>
-    <body id="container">
-        <div id="flexContainer">
-            <div class="left-pane">
-            <div class="logo">
+
+<head>
+    <title>Agora Certificate Day-1</title>
+    <link rel="stylesheet" href="login.css" />
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Puritan&display=swap" rel="stylesheet">
+</head>
+
+<body id="container">
+    <div id="flexContainer">
+        <div class="left-pane">
+            <!-- <div class="logo">
                 <img src="assets/agoraLogo.png" id="img-container"/>
-            </div>
-            <div class="loginContainer">
-                <span id="headingText">Login and enjoy <span id="highlighted">Unlimited</span> video calling</span>
-                <br/>
-                <form action="./index.html" onsubmit="return validate()">
-                <input type="text" id="email" placeholder="Email" name="email"/>
-                <br/>
-                <input type="password" id="password" placeholder="password" name="password"/>
-                <button class="submitButton" type="submit" onclick="validate()">Login</button>
-                </form>
+            </div> -->
+            <div id="illustrationContainer">
+                <img id="illustration" src="assets/chef.png" />
             </div>
         </div>
         <div id="right-pane">
-            <div id="circleContainer">
-                <div id="illustrationContainer">
-                    <img id="illustration" src="assets/Video_Conf.svg"/>
+            <div class="loginContainer">
+                <span id="headingText">Login to Continue!</span>
+                <div class="inputs">
+                    <form action="./videoCall.html" onsubmit="return validate()">
+                        <input type="text" id="email" placeholder="Email" name="email" />
+                        <br />
+                        <input type="password" id="password" placeholder="Password" name="password" />
+                        <button class="submitButton" type="submit" >Login</button>
+                    </form>
                 </div>
             </div>
-            <span id="bottomText">Chat with your <strong>closest friends</strong>  no matter how far they are</span>
         </div>
     </div>
     <script>
 
-        function validate(){
+        function validate() {
             let email = document.getElementById("email")
             let password = document.getElementById("password")
 
-            if(email.value.match(/\S+@\S+/)){
-                
+            if (email.value.match(/\S+@\S+/)) {
+
                 email.className = ""
 
-                if(password.value.length >= 8){
+                if (password.value.length >= 8) {
                     password.className = ""
 
                     return true
                 }
-                else
-                {
+                else {
                     password.className = "incorrect"
+                    alert("Incorrect password");
                     return false
                 }
-            }else{
+            } else {
                 email.className = "incorrect"
+                alert("Incorrect email");
                 return false
             }
         }
     </script>
-    </body>
+</body>
+
 </html>

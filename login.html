@@ -1,0 +1,60 @@
+<html>
+    <head>
+        <title>Agora Certificate Day-1</title>
+        <link rel="stylesheet" href="login.css"/>
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+        <link href="https://fonts.googleapis.com/css2?family=Puritan&display=swap" rel="stylesheet">
+    </head>
+    <body id="container">
+        <div id="flexContainer">
+            <div class="left-pane">
+            <!-- <div class="logo">
+                <img src="assets/agoraLogo.png" id="img-container"/>
+            </div> -->
+                <div id="illustrationContainer">
+                    <img id="illustration" src="assets/chef.png"/>
+                </div>
+            </div>
+            <div id="right-pane">
+                <div class="loginContainer">
+                    <span id="headingText">Login to Continue!</span>
+                    <div class="inputs">
+                        <form action="./videoCall.html" onsubmit="return validate()">
+                        <input type="text" id="email" placeholder="Email" name="email"/>
+                        <br/>
+                        <input type="password" id="password" placeholder="Password" name="password"/>
+                        <button action="./videoCall.html" class="submitButton" type="submit" onclick="validate()">Login</button>
+                    </div>
+                    
+                    </form>
+                </div>
+            </div>
+    </div>
+    <script>
+
+        function validate(){
+            let email = document.getElementById("email")
+            let password = document.getElementById("password")
+
+            if(email.value.match(/\S+@\S+/)){
+                
+                email.className = ""
+
+                if(password.value.length >= 8){
+                    password.className = ""
+
+                    return true
+                }
+                else
+                {
+                    password.value = "incorrect"
+                    return false
+                }
+            }else{
+                email.className = "incorrect"
+                return false
+            }
+        }
+    </script>
+    </body>
+</html>
